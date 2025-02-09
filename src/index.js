@@ -14,6 +14,9 @@ app.use(express.json());
 app.use(cookieParser()); 
 
 app.use("/cache", cacheRoute);
+app.get("/", (req, res) => {
+  res.send("Cache API is running!");
+});
 app.get("/health", (req, res) => {
   res.json({ status: "OK" });
 });
